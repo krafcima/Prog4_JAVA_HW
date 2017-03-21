@@ -13,7 +13,6 @@ public class JNumbers {
 	public static long pocetCisel(long a, long b){
 		/**
 		 * This magic i have found after reading comments in list.
-		 * V tychto while cykloch hladam najmensie  b a najvacsie a, pre ktore plati, ze a,b %9 == 5
 		 */
 		while (b % 9 != 5){
 			b -= 1 ;
