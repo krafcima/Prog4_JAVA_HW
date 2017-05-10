@@ -65,60 +65,6 @@ public class Upratovac {
 			}
 		}
 	}
-			/*else if (f.getName().substring(f.getName().length() - 4).contains(".")){
-				if	(f.getName().substring(f.getName().length() - 3).contains(".")){
-					files.add(f.getName().substring(f.getName().length() - 2));
-					File n = new File(rootFilePath + File.separator + (f.getName().substring(f.getName().length() - 2)));
-					if (n.mkdir()){
-						if (f.renameTo( new File((n.getAbsolutePath()+ File.separator) + f.getName()))){
-							//System.out.println("Succes!!!");
-						}
-					}
-					else{
-						for (File k : n.listFiles()){
-							if (!f.getName().equals(k.getName())){
-								f.renameTo( new File((n.getAbsolutePath()+ File.separator) + f.getName()));
-							//System.out.println("Succes!!!");
-							}
-						}
-					}
-				}
-				else{
-					files.add(f.getName().substring(f.getName().length() - 3));
-					File n = new File(rootFilePath + File.separator + (f.getName().substring(f.getName().length() - 3)));
-					if (n.mkdir()){
-						if (f.renameTo( new File((n.getAbsolutePath()+ File.separator)+ f.getName()))){
-							//System.out.println("Succes!!!");
-						}
-					}
-					else{
-						for (File k : n.listFiles()){
-							if (!f.getName().equals(k.getName())){
-								f.renameTo( new File((n.getAbsolutePath()+ File.separator) + f.getName()));
-							//System.out.println("Succes!!!");
-							}
-						}
-					}
-					
-				}
-			}
-			else if(f.getName().substring(f.getName().length() - 5).contains(".")){
-				files.add(f.getName().substring(f.getName().length() - 4));
-				File n = new File(rootFilePath + File.separator + (f.getName().substring(f.getName().length() - 4)));
-				if (n.mkdir()){
-					if (f.renameTo( new File((n.getAbsolutePath()+ File.separator) + f.getName()))){
-						//System.out.println("Succes!!!");
-					}
-				}
-				else{
-					for (File k : n.listFiles()){
-						if (!f.getName().equals(k.getName())){
-							f.renameTo( new File((n.getAbsolutePath()+ File.separator) + f.getName()));
-						//System.out.println("Succes!!!");
-						}
-					}
-				}
-			}*/
 public static boolean kontrola(String fName, File n){
 	for (File k : n.listFiles()){
 		if (fName.equals(k.getName())){
@@ -127,15 +73,11 @@ public static boolean kontrola(String fName, File n){
 	}
 	return true;
 }
-	
-	
-	
-	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		File mainDir =  new File("D:/DA/Galéria/Fotky/Mobil-Aktualne");
+		File mainDir =  new File("path to directory you want to clean up");
 		//System.out.println(mainDir);
 		Upratovac.poupratuj(mainDir);
 	}
