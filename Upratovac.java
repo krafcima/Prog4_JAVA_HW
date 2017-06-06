@@ -16,14 +16,14 @@ public class Upratovac {
 	 */		
 	public static void poupratuj(File dir){
 		rootFilePath = dir.getAbsolutePath();
-		Set<File> fS = getDirs(dir);
+		//Set<File> fS = getDirs(dir);
 		presunSuborov(dir);
 		System.out.println("Succes ---> " + dir.getAbsolutePath());
-		for(File x : fS){
+		/*for(File x : fS){
 			presunSuborov(x);
 			System.out.println("Succes ---> " + x.getAbsolutePath());
 			x.delete();
-		}
+		}*/
 	}
 
 	/**
@@ -50,8 +50,9 @@ public class Upratovac {
 		for (File f : dir.listFiles()){
 			if (!f.isDirectory()){
 				int kde = f.getName().lastIndexOf('.');
-				files.add(f.getName().substring(kde));
-				File n = new File((rootFilePath + File.separator)+ f.getName().substring(kde));
+				//files.add(f.getName().substring(kde));
+				files.add(f.getName().substring(0, kde));
+				File n = new File((rootFilePath + File.separator)+ f.getName().substring(0, kde));
 				if (n.mkdir()){
 					if (kontrola(f.getName(), n)){
 						f.renameTo( new File((n.getAbsolutePath()+ File.separator) + f.getName()));
@@ -77,7 +78,7 @@ public static boolean kontrola(String fName, File n){
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		File mainDir =  new File("path to directory you want to clean up");
+		File mainDir =   new File("D:/DA/Galéria/Filmy/Dráma");                      //new File("D:/DA/Galéria/Fotky/Mobil-Aktualne");
 		//System.out.println(mainDir);
 		Upratovac.poupratuj(mainDir);
 	}
